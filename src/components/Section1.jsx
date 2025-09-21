@@ -1,7 +1,8 @@
-import React, { Suspense, useRef } from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 import Robot from "./Robot";
 import Background2 from "./Background2";
 import Background3 from "./Background3";
@@ -12,8 +13,32 @@ import Background5 from "./Background5";
 import Background6 from "./Background6";
 import Footer from "../Footer";
 
+
+
 const Section1 = () => {
   const containerRef = useRef(null);
+
+  // ✅ Initialize Lenis once
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
 
   // 👇 scroll progress only for sections 1–6
   const { scrollYProgress } = useScroll({
@@ -59,7 +84,7 @@ const Section1 = () => {
       </motion.div>
 
       {/* Main content */}
-      <div ref={containerRef}>
+      <div ref={containerRef} className="relative">
         {/* First section */}
         <section className="flex items-start px-12 relative overflow-hidden min-h-screen">
           <Background />
