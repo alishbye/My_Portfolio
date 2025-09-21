@@ -17,13 +17,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # you can set 20 if your project supports it
+          node-version: 18
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build project
-        run: npm run build
+        run: |
+          npm run build
+        env:
+          NODE_ENV: production  # ✅ Add this line
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
