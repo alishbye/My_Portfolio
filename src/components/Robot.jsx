@@ -6,9 +6,11 @@ import { useFrame } from '@react-three/fiber'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/robot.gltf')
+   const base = import.meta.env.BASE_URL
+  const { nodes, materials, animations } = useGLTF(`${base}robot.gltf`)
   const { actions } = useAnimations(animations, group)
   const { scrollProgress } = props
+ 
 
   // ✅ Play all animations when the model loads
   useEffect(() => {
@@ -234,5 +236,4 @@ useFrame((state, delta) => {
     </group>
   )
 }
-
-useGLTF.preload('/robot.gltf')
+useGLTF.preload(`${base}robot.gltf`)
