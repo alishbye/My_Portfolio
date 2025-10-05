@@ -22,27 +22,15 @@ const Section1 = () => {
   // ✅ Initialize Lenis once
 useEffect(() => {
   const lenis = new Lenis({
-    duration: window.innerWidth < 768 ? 0.7 : 1.2, // Shorter duration on mobile
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smoother easing
-    smoothWheel: true,
-    smoothTouch: true,
-    touchMultiplier: window.innerWidth < 768 ? 1.3 : 1.2, // Reduced inertia
-    wheelMultiplier: window.innerWidth < 768 ? 0.7 : 1,
-    gestureOrientation: 'vertical',
-    touchInertiaMultiplier: window.innerWidth < 768 ? 1.5 : 2.5, // Reduced for upward scroll
-    syncTouch: true, // Better touch sync
+    smoothWheel: window.innerWidth > 768, // only desktop
+    smoothTouch: false,
   });
-
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
-
   requestAnimationFrame(raf);
-
-  return () => {
-    lenis.destroy();
-  };
+  return () => lenis.destroy();
 }, []);
 
 
