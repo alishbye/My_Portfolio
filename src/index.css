@@ -2,6 +2,7 @@
 /* src/components/Background.css */
 body {
   background-color: rgb(3, 29, 39); /* fallback if nothing loads */
+  overflow-x: hidden;
 }
 
 html {
@@ -91,12 +92,13 @@ opacity: 0.7; /* Added transparency to blend */
   height: 100vh;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, #1a1a1a 0%, #3a4d4f 30%, #5a7d7f 70%, #0d0b2b 100%);
+background: linear-gradient(180deg, #0f0b1f 0%, #2a1b4a 40%, #3a5f8c 70%, #0d0b2b 100%);
 
   opacity: 0.6; /* Added transparency to blend */
   filter: blur(90px) brightness(1); /* Added subtle blur and brightness */
   mix-blend-mode: soft-light; /* Creates a nice blending effect */
 }
+
 
 
 /* Stars layer */
