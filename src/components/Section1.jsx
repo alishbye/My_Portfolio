@@ -23,10 +23,12 @@ const Section1 = () => {
 useEffect(() => {
   const lenis = new Lenis({
     smoothWheel: true,
-    smoothTouch: true, // ✅ Enable smooth scrolling on mobile
-    touchMultiplier: 2, // Makes it feel more responsive on touch devices
+    smoothTouch: true,
+    touchMultiplier: 1.5,
+    wheelMultiplier: 1,
+    gestureOrientation: 'vertical',
   });
-  
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
