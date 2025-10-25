@@ -22,9 +22,11 @@ const Section1 = () => {
   // ✅ Initialize Lenis once
 useEffect(() => {
   const lenis = new Lenis({
-    smoothWheel: window.innerWidth > 768, // only desktop
-    smoothTouch: false,
+    smoothWheel: true,
+    smoothTouch: true, // ✅ Enable smooth scrolling on mobile
+    touchMultiplier: 2, // Makes it feel more responsive on touch devices
   });
+  
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
