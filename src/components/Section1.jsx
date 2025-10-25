@@ -78,7 +78,7 @@ useEffect(() => {
       </motion.div>
 
       {/* Main content */}
-      <div ref={containerRef} className="relative">
+      <div ref={containerRef} className="relative overflow-x-hidden">
         {/* First section */}
        <section id="Home" className="flex items-start px-4 md:px-12 relative overflow-hidden min-h-screen">
   <Background />
@@ -220,7 +220,7 @@ useEffect(() => {
 
 {/* Mobile-only huge zoom heading */}
 <motion.div
-  className="block md:hidden fixed top-1/2 left-1/2 z-30 pointer-events-none items-center justify-center"
+  className="block md:hidden fixed top-1/2 left-1/2 z-30 pointer-events-none overflow-hidden items-center justify-center"
   style={{
     // Center correctly
     x: "-50%",
@@ -261,7 +261,7 @@ useEffect(() => {
       x: useTransform(scrollYProgress, [0.35, 0.4, 0.55, 0.6], [-100, 0, 0, -100]),
     }}
   >
-    <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-8 py-4 shadow-2xl shadow-black/40">
+    <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center py-4 shadow-2xl shadow-black/40">
       <span className="text-black text-xl font-semibold">Tailwind</span>
     </div>
   </motion.div>
@@ -274,7 +274,7 @@ useEffect(() => {
     x: useTransform(scrollYProgress, [0.38, 0.43, 0.55, 0.6], [100, 0, 0, 100]),
   }}
 >
-  <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
+  <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
     <span className="text-black text-xl font-semibold">HTML</span>
   </div>
 </motion.div>
@@ -287,7 +287,7 @@ useEffect(() => {
     x: useTransform(scrollYProgress, [0.41, 0.46, 0.55, 0.6], [-100, 0, 0, -100]),
   }}
 >
-  <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
+  <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
     <span className="text-black text-xl font-semibold">React</span>
   </div>
 </motion.div>
@@ -300,7 +300,7 @@ useEffect(() => {
     x: useTransform(scrollYProgress, [0.44, 0.49, 0.55, 0.6], [100, 0, 0, 100]),
   }}
 >
-  <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
+  <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
     <span className="text-black text-xl font-semibold">JavaScript</span>
   </div>
 </motion.div>
@@ -313,7 +313,7 @@ useEffect(() => {
     x: useTransform(scrollYProgress, [0.47, 0.52, 0.55, 0.6], [-100, 0, 0, -100]),
   }}
 >
-  <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
+  <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
     <span className="text-black text-xl font-semibold">Next.js</span>
   </div>
 </motion.div>
@@ -326,7 +326,7 @@ useEffect(() => {
     x: useTransform(scrollYProgress, [0.50, 0.55, 0.55, 0.6], [100, 0, 0, 100]),
   }}
 >
-  <div className="bg-white w-[21rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
+  <div className="bg-white w-[19rem] backdrop-blur-sm border border-black/40 rounded-3xl text-center px-6 py-4 shadow-2xl shadow-black/40">
     <span className="text-black text-xl font-semibold">Three.js</span>
   </div>
 </motion.div>
@@ -351,7 +351,7 @@ useEffect(() => {
 
 {/* Sticky Cards Outside Sections 5 & 6 */}
 <motion.div
-  className="fixed left-1/2 md:left-12  mt-8 md:mt-0 top-1/2 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 flex flex-col gap-8 z-[80] w-[20rem] md:w-[40rem]"
+  className="fixed left-1/2 md:left-12  mt-0 md:mt-0 top-1/2 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 flex flex-col gap-8 z-[80] w-[18rem] md:w-[40rem]"
   style={{
     opacity: useTransform(scrollYProgress, [0.8, 0.9], [5, 0]),
   }}
@@ -434,7 +434,7 @@ useEffect(() => {
   {/* Projects Heading - Updated to appear in Section 5 */}
   {/* Projects Heading - Updated to appear in Section 5 */}
 <motion.h2
-  className="absolute text-3xl md:text-4xl font-extrabold text-white md:left-17 top-4 md:top-23 z-30 text-center md:text-left w-full md:w-auto"
+  className="absolute text-4xl md:text-4xl font-extrabold text-white md:left-17 top-20 md:top-23 z-30 text-center md:text-left w-full md:w-auto"
   style={{
     opacity: useTransform(scrollYProgress, [0.45, 0.5], [0, 1]),
   }}
@@ -443,61 +443,72 @@ useEffect(() => {
 </motion.h2>
 
   {/* Project cards - Updated to appear in Section 5 */}
-  <motion.div
-    className="absolute md:px-1 left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-16 top-18 md:top-40 flex flex-col md:flex-row space-y-4 md:space-y-0  md:space-x-8 z-[150]"
-    style={{
-      opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]),
-      scale: useTransform(scrollYProgress, [0.4, 0.5], [0.05, 1]),
-      y: useTransform(scrollYProgress, [0.4, 0.5], [80, 0]),
-    }}
-  >
-    {/* Card 1 */}  
-    <motion.div
-      className="w-78 md:w-96 rounded-2xl px-2 py-4 bg-cyan-950/80 md:backdrop-blur-lg border border-white/20 md:shadow-2xl md:shadow-teal-500/30"
-    >
-      <div className="w-72 md:w-84 h-42 md:h-58 mx-auto overflow-hidden rounded-xl mb-4">
-        <a href="https://alishbye.github.io/real-medical/" target="_blank" rel="noopener noreferrer">
-          <motion.img
-            src="proj.png"
-            alt="Project 1"
-            className="w-full h-full object-cover cursor-pointer"
-            whileHover={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          />
-        </a>
-      </div>
-      <h3 className="text-white text-xl md:text-2xl font-bold text-center mt-4">REAL MEDICAL</h3>
-      <p className="text-gray-200 text-sm md:text-base text-center mt-1">
-        Built with ReactJS and Tailwind CSS
-      </p>
-    </motion.div>
+ {/* Project cards - Updated to appear in Section 5 */}
+<motion.div
+  className="relative md:absolute 
+             w-full md:w-auto 
+             px-4 md:px-1         /* 🔧 more padding on mobile for centering */
+             flex flex-col md:flex-row 
+             items-center md:items-stretch /* 🔧 center cards horizontally on mobile only */
+             justify-center md:justify-start 
+             space-y-12 md:space-y-0 md:space-x-8 
+             left-0 md:left-16 
+             transform md:translate-x-0 
+             z-[150] md:top-40"
+  style={{
+    opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]),
+    scale: useTransform(scrollYProgress, [0.4, 0.5], [0.05, 1]),
+    y: useTransform(scrollYProgress, [0.4, 0.5], [80, 0]),
+  }}
+>
 
+{/* Card 1 - Fixed */}  
+<motion.div
+  className="w-70 md:w-96 rounded-2xl px-2 py-4 bg-cyan-950/80 md:backdrop-blur-lg border border-white/20 md:shadow-2xl md:shadow-teal-500/30"
+>
+  <div className="w-full h-42 md:h-58 mx-auto overflow-hidden rounded-xl mb-4">
+    <a href="https://alishbye.github.io/real-medical/" target="_blank" rel="noopener noreferrer">
+      <motion.img
+        src="proj.png"
+        alt="Project 1"
+        className="w-full h-full object-cover rounded-xl cursor-pointer"
+        whileHover={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      />
+    </a>
+  </div>
+
+  <h3 className="text-white text-xl md:text-2xl font-bold text-center mt-4">REAL MEDICAL</h3>
+  <p className="text-gray-200 text-sm md:text-base text-center mt-1">
+    Built with ReactJS and Tailwind CSS
+  </p>
+</motion.div>
     {/* Card 2 */}
-    <motion.div
-      className="w-78 md:w-96 rounded-2xl px-2 py-4 bg-cyan-950/80 md:backdrop-blur-lg border border-white/20 md:shadow-2xl md:shadow-teal-500/30"
-    >
-      <div className="w-72 md:w-84 h-42 md:h-58 mx-auto overflow-hidden rounded-xl mb-4">
-        <a href="https://alishbye.github.io/coffeeshop/" target="_blank" rel="noopener noreferrer">
-          <motion.img
-            src="proj2.png"
-            alt="Project 2"
-            className="w-full h-full object-cover cursor-pointer"
-            whileHover={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          />
-        </a>
-      </div>
-      <h3 className="text-white text-xl md:text-2xl font-bold text-center mt-4">COFFEE SHOP</h3>
-      <p className="text-gray-200 text-sm md:text-base text-center px-1 mt-1">
-        Built with ReactJS, Tailwind CSS, and Framer Motion. Features parallax scrolling and interactive animations.
-      </p>
-    </motion.div>
-  </motion.div>
+<motion.div
+  className="w-70 md:w-96 rounded-2xl px-2 py-4 bg-cyan-950/80 md:backdrop-blur-lg border border-white/20 md:shadow-2xl md:shadow-teal-500/30"
+>
+  <div className="w-full h-42 md:h-58 mx-auto overflow-hidden rounded-xl mb-4">
+    <a href="https://alishbye.github.io/coffeeshop/" target="_blank" rel="noopener noreferrer">
+      <motion.img
+        src="proj2.png"
+        alt="Project 2"
+        className="w-full h-full object-cover rounded-xl cursor-pointer"
+        whileHover={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      />
+    </a>
+  </div>
+  <h3 className="text-white text-xl md:text-2xl font-bold text-center mt-4">COFFEE SHOP</h3>
+  <p className="text-gray-200 text-sm md:text-base text-center px-1 mt-1">
+    Built with ReactJS, Tailwind CSS, and Framer Motion. Features parallax scrolling and interactive animations.
+  </p>
+</motion.div>
+</motion.div>
 
   {/* View More Button - Updated to appear in Section 5 */}
-  <motion.button
+ <motion.button
     onClick={() => window.open("https://github.com/alishbye", "_blank")}
-    className="absolute bottom-8 md:bottom-22 left-12 md:left-16 px-4 md:px-8 w-[calc(100vw-6rem)] md:w-[49.5rem] py-1 md:py-2 
+    className="absolute bottom-22 md:bottom-22 left-1/2 -translate-x-1/2 md:left-16 md:translate-x-0 px-4 md:px-8 w-[15rem] md:w-[49.5rem] py-4 md:py-2 
               bg-white/10 backdrop-blur-md border border-white/20 
               text-white font-semibold text-base md:text-lg rounded-full 
               shadow-lg hover:bg-white/20 
@@ -508,7 +519,7 @@ useEffect(() => {
     }}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-  >
+>
     <span>View more projects on</span>
     <svg 
       xmlns="http://www.w3.org/2000/svg" 

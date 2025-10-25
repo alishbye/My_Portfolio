@@ -1,13 +1,58 @@
 @import "tailwindcss";
 /* src/components/Background.css */
-body {
-  background-color: rgb(3, 29, 39); /* fallback if nothing loads */
-  overflow-x: hidden;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ✅ Prevent horizontal overflow at root */
 }
+
+body {
+  background-color: rgb(3, 29, 39);
+  overflow-x: hidden; /* ✅ Ensure body doesn't allow horizontal scroll */
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; /* ✅ Prevent body from exceeding viewport */
+}
+
+/* Mobile-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    position: fixed;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100vw; /* ✅ Use viewport width instead of 100% */
+  }
+}
+
+/* Additional overflow protection */
+
+/* Ensure images and media don't cause overflow */
+img, 
+video, 
+iframe, 
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
 /* Fixed glowing nebula background */
 #glow-background {
   position: fixed;
